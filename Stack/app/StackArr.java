@@ -1,9 +1,10 @@
-package Stack.app;
+package app;
 
 public class StackArr {
     private int top,max;
     int arr[];
-    StackArr(int size){
+
+    public StackArr(int size){
         arr = new int [size];
         max = size;
         top=-1;
@@ -32,20 +33,24 @@ public class StackArr {
             if(isEmpty()) return -1;
             int temp = arr[top];
             top--;
-            return arr[temp];
+            return temp;
         }
 
-    //print stack
-    public void printStack(){
-        if(isEmpty()){
-            System.out.println("Stack is empty");
-            return;
+        //peek
+        public int peek(){
+            return top!=-1 ? arr[top]:top;
         }
+        //print stack
+        public void printStack(){
+            if(isEmpty()){
+                System.out.println("Stack is empty");
+                return;
+            }
 
-        for (int i = 0; i <= top; i++) {
-            System.out.println(arr[top]);
+            for (int i = top; i >= 0; i--) {
+                System.out.println(arr[i]);
+            }
         }
-    }
 }
 
 
