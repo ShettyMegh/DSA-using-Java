@@ -57,6 +57,12 @@ public class StackLL {
         
     }
 
+    //peek
+    public int peek(){
+        if(isEmpty()) return -1;
+        return head.data;
+    }
+
     //print
     public void  printStack(){
         if(isEmpty()){

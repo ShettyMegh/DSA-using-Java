@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import app.StackArr;
+import app.*;
 
 public class StackApp{
 
@@ -22,6 +22,7 @@ public class StackApp{
                     break;
 
                 case 2:
+                    sllStack();
                     break;
 
                 case 3:
@@ -93,5 +94,59 @@ public class StackApp{
             }
         }
     }
+
+
+
+ //for stack using Singly Linked List interface
+ public static void sllStack(){
+    boolean arrFlag = true;
+    int size;
+    System.out.println("Enter size of Stack");
+    size = sc.nextInt();
+    StackLL stackLL = new StackLL(size);
+    while(arrFlag){
+        System.out.println("1.Push  2.Pop  3.Print  4.Peek  5.Go Back");
+        int choice = sc.nextInt();
+        int res;
+        switch(choice){
+            case 1: System.out.print("Enter an Element to Push: ");
+                    int ele = sc.nextInt();
+                    if(stackLL.push(ele)){
+                        System.out.println(ele+" pushed successfully");
+                        break;
+                    }
+                    System.out.println("Stack Overflow");
+                    break;
+
+            case 2: res = stackLL.pop();
+                    if(res == -1){
+                        System.out.println("Stack is Underflow");
+                        break;
+                    }
+                    System.out.println(res+" popped successfully");
+                    break;
+            
+            case 3: stackLL.printStack();
+                    break;
+
+            case 4:
+                    res = stackLL.peek();
+                    if(res != -1){
+                        System.out.println("Peek: "+res);
+                        break;
+                    }
+
+                    System.out.println("Stack is Empty");
+                    break;
+
+            case 5:
+                    arrFlag = false;
+                    break;
+            
+            default: System.out.println("Wrong choice");
+                    break;
+        }
+    }
+}
 }
 
