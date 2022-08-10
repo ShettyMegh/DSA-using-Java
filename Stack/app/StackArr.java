@@ -20,9 +20,20 @@ public class StackArr {
         }
     
         //push
-    
+        public boolean push(int ele){
+            if(isFull()) return false;
+            top++;
+            arr[top] = ele;
+            return true;
+        }
     
         //pop
+        public int pop(){
+            if(isEmpty()) return -1;
+            int temp = arr[top];
+            top--;
+            return arr[temp];
+        }
 
     //print stack
     public void printStack(){
