@@ -4,9 +4,14 @@ import app.*;
 public class StackApp{
 
     static Scanner sc = new Scanner(System.in);
-
+    static int size;
+    public static void modStackSize(){
+        System.out.println("Enter the size of Stack: ");
+        size = sc.nextInt();
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Stack App");
+        modStackSize();
         boolean flag = true;
         while(flag){
             System.out.println("1. Stack using Array");
@@ -26,6 +31,8 @@ public class StackApp{
                     break;
 
                 case 3:
+                    modStackSize();
+                    System.out.println("Changed Stack size successfully");
                     break;
                 case 4: 
                     System.out.println("Exiting App...");
@@ -46,9 +53,6 @@ public class StackApp{
     //for stack using array interface
     public static void arrStack(){
         boolean arrFlag = true;
-        int size;
-        System.out.println("Enter size of Stack");
-        size = sc.nextInt();
         StackArr stackArr = new StackArr(size);
         while(arrFlag){
             System.out.println("1.Push  2.Pop  3.Print  4.Peek  5.Go Back");
@@ -72,7 +76,10 @@ public class StackApp{
                         System.out.println(res+" popped successfully");
                         break;
                 
-                case 3: stackArr.printStack();
+                case 3: 
+                        System.out.println("***************************");
+                        stackArr.printStack();
+                        System.out.println("***************************");
                         break;
 
                 case 4:
@@ -100,9 +107,6 @@ public class StackApp{
  //for stack using Singly Linked List interface
  public static void sllStack(){
     boolean arrFlag = true;
-    int size;
-    System.out.println("Enter size of Stack");
-    size = sc.nextInt();
     StackLL stackLL = new StackLL(size);
     while(arrFlag){
         System.out.println("1.Push  2.Pop  3.Print  4.Peek  5.Go Back");
@@ -126,7 +130,10 @@ public class StackApp{
                     System.out.println(res+" popped successfully");
                     break;
             
-            case 3: stackLL.printStack();
+            case 3: 
+                    System.out.println("***************************");
+                    stackLL.printStack();
+                    System.out.println("***************************");
                     break;
 
             case 4:
