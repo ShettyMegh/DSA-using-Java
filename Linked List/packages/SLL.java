@@ -53,11 +53,33 @@ public class SLL {
             return;
         }
 
-
+        
         newNode.next = head;
         head = newNode;
     }
 
-  
+
+
+    //add back
+    public void addBack(int data){
+        Node newNode = new Node(data);
+        if(head==null){
+            head = newNode;
+            return;
+        }
+
+        Node current = head;
+
+        while(current.next !=null){
+            current = current.next;
+        }
+
+        current.next = newNode;
+    }
+
+
+
+   
+
 
 }
