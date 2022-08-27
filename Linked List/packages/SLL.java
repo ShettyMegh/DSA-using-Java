@@ -79,7 +79,48 @@ public class SLL {
 
 
 
-   
+    //Remove from front
+    public int removeFront(){
+        if(head == null){
+            return -1;
+        }
+
+            int temp  = head.data;
+            head = head.next;
+            return temp;
+    }
+
+
+
+    //remove last
+    public int removeLast(){
+
+        //incase if there is no node
+        if(head == null){
+            return -1;
+        }
+
+
+        //incase if there is only one node
+        if(head.next == null){
+            int temp = head.data;
+            head = null;
+            return temp;
+        }
+
+
+        //if there is more than one node
+        Node current = head;
+
+        while(current.next.next !=null){
+            current = current.next;
+        }
+
+        int temp = current.next.data;
+        current.next = null;
+        return temp;
+
+    }
 
 
 }
