@@ -44,6 +44,20 @@ public class SLL {
 
 
 
-   
+    //Add front
+    public void addFront(int data){
+        Node newNode = new Node(data);
+
+        if(head==null){
+            head = newNode;
+            return;
+        }
+
+
+        newNode.next = head;
+        head = newNode;
+    }
+
+  
 
 }
