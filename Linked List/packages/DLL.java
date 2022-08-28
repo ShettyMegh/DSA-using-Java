@@ -31,6 +31,7 @@ public class DLL {
         }
 
         Node current = head;
+        System.out.println("\n*************************************************");
         System.out.print("Null <==> ");
         while(current!=null){
             System.out.print(current.data+" <==> ");
@@ -38,6 +39,9 @@ public class DLL {
         }
 
         System.out.println("Null");
+
+        System.out.println("*************************************************");
+
 
     }
     

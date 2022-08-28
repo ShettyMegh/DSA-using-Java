@@ -105,7 +105,6 @@ class LLApp{
     }
 
 
-
     //Circular Singly Linked List
     static void CSLLOperations(){
         boolean flag = true;
@@ -162,9 +161,7 @@ class LLApp{
     }
 
 
-
-
-     //Doubly Singly Linked List
+     //Doubly Linked List
      static void DLLOperations(){
         boolean flag = true;
         DLL doubly = new DLL();
@@ -274,8 +271,5 @@ class LLApp{
         }
 
     }
-
-
-
 
 }
