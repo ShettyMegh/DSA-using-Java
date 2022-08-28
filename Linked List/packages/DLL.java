@@ -73,4 +73,53 @@ public class DLL {
         newNode.prev = current;
     }
 
+    //remove from front
+    public int removeFront(){
+        int temp;
+        if(head==null){
+            return -1;
+        }
+
+        if(head.next == null){
+            temp = head.data;
+            head = null;
+            return temp;
+        }
+
+
+        temp = head.data;
+        head = head.next;
+        head.prev = null;
+        return temp;
+    }
+
+
+
+    //remove from back
+    public int removeBack(){
+        int temp;
+        if(head==null){
+            return -1;
+        }
+
+        if(head.next == null){
+            temp = head.data;
+            head=null;
+            return temp;
+        }
+
+        Node current = head;
+        //loop upto last 2nd node
+        while(current.next.next !=null){
+            current = current.next;
+        }
+        temp = current.next.data;
+        //break the connection
+        current.next = null;
+        return temp;
+    }
+
+
+
+
 }
