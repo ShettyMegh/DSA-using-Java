@@ -88,4 +88,28 @@ public class CSLL {
         }
 
 
+        public int removeBack(){
+            int temp;
+            if(head == null){
+                return -1;
+            }
+
+            if(head == tail){
+                temp = tail.data;
+                head = tail = null;
+                return temp;
+            }
+
+            Node current = head;
+            while(current.next != tail){
+                current = current.next;
+            }
+
+            temp  = tail.data;
+            current.next = head;
+            tail = current;
+
+            return temp;
+        }
+
     }
