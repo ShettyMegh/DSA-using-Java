@@ -71,4 +71,25 @@ public class CDLL {
         
     }
 
+    //remove from front
+
+    public int removeFront(){
+        int temp;
+        if(head==null){
+            return -1;
+        }
+
+        if(head == tail){
+            temp = head.data;
+            head = tail = null;
+            return temp;
+        }
+
+        temp = head.data;
+        head = head.next;
+        head.prev = tail;
+        tail.next = head;
+        return temp;
+    }
+
 }
