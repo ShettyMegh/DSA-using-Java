@@ -38,6 +38,37 @@ public class CDLL {
         System.out.println("(head)"+current.data);
     }
 
- 
+    //add from front
+    public void addFront(int data){
+        Node newNode = new Node(data);
+        if(head==null){
+            head = tail = newNode;
+            return;
+        }
+
+        newNode.next = head;
+        head.prev = newNode;
+        head = newNode;
+        tail.next = head;
+        head.prev = tail;
+
+    }
+
+
+    //add from back
+    public void addBack(int data){
+        Node newNode = new Node(data);
+        if(head==null){
+            head = tail = newNode;
+            return;
+        }
+
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
+        tail.next = head;
+        head.prev = tail;
+        
+    }
 
 }
