@@ -52,9 +52,8 @@ class LLApp{
                 
                 case 1:
                     System.out.println("Enter the Data: ");
-                    int data1 = sc.nextInt();
-                    System.out.println(data1);
-                    singly.addFront(data1);
+                    data = sc.nextInt();
+                    singly.addFront(data);
                     System.out.println("Added Front Successfully");
                     break;
 
@@ -67,11 +66,12 @@ class LLApp{
 
                 case 3:
                     res = singly.removeFront();
-                    System.out.println(res);
                     System.out.println(res==-1?"List is Empty":res+" is Removed from front");
                     break;
                 
                 case 4:
+                    res = singly.removeBack();
+                    System.out.println(res==-1?"List is Empty":res+" is Removed from Back");
                     break;
 
                 case 5:
@@ -84,7 +84,7 @@ class LLApp{
 
 
                 default:
-                    System.out.println("Wrong Choice");
+                    System.out.println("Wrong Choice, please try again");
             }
 
         }

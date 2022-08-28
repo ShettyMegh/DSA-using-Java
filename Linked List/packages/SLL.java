@@ -93,7 +93,7 @@ public class SLL {
 
 
     //remove last
-    public int removeLast(){
+    public int removeBack(){
 
         //incase if there is no node
         if(head == null){
