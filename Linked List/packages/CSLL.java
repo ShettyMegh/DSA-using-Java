@@ -22,13 +22,20 @@ public class CSLL {
                 return;
             }
 
+            if(head == tail){
+                System.out.println(head.data);
+                return;
+            }
+
             Node current = head;
 
-            while(current.next != head){
+            do{
                 System.out.print(current.data+" -> ");
                 current = current.next;
             }
-            System.out.println(tail.next.data+"(head)");
+            while(current != head);
+                
+            System.out.println("(head) "+tail.next.data);
 
 
         }
