@@ -12,7 +12,7 @@ class LLApp{
         boolean flag = true;
 
         while(flag){
-            System.out.println("1.Singly Linked List \t 2.Circular Singly Linked List \n3.Doubly Linked List \t 4.Double Circular Linked List \n5.Exit");
+            System.out.println("1.Singly Linked List \t 2.Circular Singly Linked List \n3.Doubly Linked List \t 4.Doubly Circular Linked List \n5.Exit");
             System.out.print("Enter you choice: ");
             int choice = sc.nextInt();
             switch(choice){
@@ -24,6 +24,9 @@ class LLApp{
                     CSLLOperations();
                     break;
                
+                case 3:
+                    DLLOperations();
+                    break;
 
                 case 5:
                     System.out.println("Exiting..");
@@ -80,11 +83,11 @@ class LLApp{
                     break;
 
                 case 5:
-                    System.out.println("Going Back..");
                     singly.printLL();
                     break;
 
                 case 6:
+                    System.out.println("Going Back..");
                     flag=false;
                     break;
 
@@ -137,11 +140,69 @@ class LLApp{
                     break;
    
                 case 5:
-                    System.out.println("Going Back..");
                     cirSingly.printLL();
                     break;
 
                 case 6:
+                    System.out.println("Going Back..");
+                    flag=false;
+                    break;
+
+
+                default:
+                    System.out.println("Wrong Choice, please try again");
+            }
+
+        }
+
+    }
+
+
+
+
+     //Doubly Singly Linked List
+     static void DLLOperations(){
+        boolean flag = true;
+        DLL doubly = new DLL();
+        while(flag){
+            System.out.println("\nDoubly Linked List Operations: ");
+            System.out.println("1.Add Front \t 2.Add Back \t 3.Remove Front \t 4.Remove Back \t 5.Print List \t 6.Go Back");
+            System.out.print("Enter your choice: ");
+            System.out.println();
+            int choice = sc.nextInt();
+            int data,res;
+            switch(choice){
+                
+                case 1:
+                    System.out.println("Enter the Data: ");
+                    data = sc.nextInt();
+                    doubly.addFront(data);
+                    System.out.println("Added at Front Successfully");
+                    break;
+
+                case 2:
+                    System.out.println("Enter the Data: ");
+                    data = sc.nextInt();
+                    doubly.addBack(data);
+                    System.out.println("Added at Back Successfully");
+                    break;
+
+                case 3:
+                    res = doubly.removeFront();
+                    System.out.println(res==-1?"List is Empty":res+" is Removed from front");
+                    break;
+                
+                case 4:
+                    res = doubly.removeBack();
+                    System.out.println(res==-1?"List is Empty":res+" is Removed from Back");
+                    break;
+   
+                case 5:
+                    doubly.printLL();
+                    break;
+
+                case 6:
+                    System.out.println("Going Back..");
                     flag=false;
                     break;
 

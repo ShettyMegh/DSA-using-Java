@@ -19,7 +19,7 @@ public class DLL {
 
 
     //print list
-    public void printList(){
+    public void printLL(){
         if(head==null){
             System.out.println("List is empty");
             return;
