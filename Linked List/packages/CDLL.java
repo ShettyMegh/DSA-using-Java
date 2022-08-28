@@ -92,4 +92,25 @@ public class CDLL {
         return temp;
     }
 
+
+    //remove from back
+    public int removeBack(){
+        int temp;
+        if(head == null){
+            return -1;
+        }
+
+        if(head == tail){
+            temp = head.data;
+            head = tail = null;
+            return temp;
+        }
+
+        temp = tail.data;
+        tail = tail.prev;
+        tail.next = head;
+        head.prev = tail;
+        return temp;
+    }
+
 }
