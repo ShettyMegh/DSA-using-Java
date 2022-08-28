@@ -29,9 +29,9 @@ public class SLL {
         Node current = head;
 
         //optional
-        System.out.println("\nhead");
-        System.out.println(" | ");
-        System.out.println("\\ /");
+        // System.out.println("\nhead");
+        // System.out.println(" | ");
+        // System.out.println("\\ /");
 
         //print until current becomes null
         while(current !=null){
