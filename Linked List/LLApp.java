@@ -28,6 +28,10 @@ class LLApp{
                     DLLOperations();
                     break;
 
+                case 4:
+                    CDLLOperations();
+                    break;
+
                 case 5:
                     System.out.println("Exiting..");
                     flag = false;
@@ -216,6 +220,62 @@ class LLApp{
     }
 
 
+    //Circular Doubly Linked List
+    static void CDLLOperations(){
+        boolean flag = true;
+        CDLL cirDoubly = new CDLL();
+        while(flag){
+            System.out.println("\nCircular Doubly Linked List Operations: ");
+            System.out.println("1.Add Front \t 2.Add Back \t 3.Remove Front \t 4.Remove Back \t 5.Print List \t 6.Go Back");
+            System.out.print("Enter your choice: ");
+            System.out.println();
+            int choice = sc.nextInt();
+            int data,res;
+            switch(choice){
+                
+                case 1:
+                    System.out.println("Enter the Data: ");
+                    data = sc.nextInt();
+                    cirDoubly.addFront(data);
+                    System.out.println("Added at Front Successfully");
+                    break;
+
+                case 2:
+                    System.out.println("Enter the Data: ");
+                    data = sc.nextInt();
+                    cirDoubly.addBack(data);
+                    System.out.println("Added at Back Successfully");
+                    break;
+
+                case 3:
+                    res = cirDoubly.removeFront();
+                    System.out.println(res==-1?"List is Empty":res+" is Removed from front");
+                    break;
+                
+                case 4:
+                    res = cirDoubly.removeBack();
+                    System.out.println(res==-1?"List is Empty":res+" is Removed from Back");
+                    break;
+    
+                case 5:
+                    cirDoubly.printLL();
+                    break;
+
+                case 6:
+                    System.out.println("Going Back..");
+                    flag=false;
+                    break;
+
+
+                default:
+                    System.out.println("Wrong Choice, please try again");
+            }
+
+        }
+
+    }
+
+
+
 
 }
-
