@@ -17,11 +17,14 @@ public class CSLL {
 
         //print list
         public void printList(){
+
+            //incase list is empty
             if(head==null){
                 System.out.println("List is empty");
                 return;
             }
 
+            //incase if there is only one node
             if(head == tail){
                 System.out.println(head.data);
                 return;
@@ -29,6 +32,7 @@ public class CSLL {
 
             Node current = head;
 
+            //print all list
             do{
                 System.out.print(current.data+" -> ");
                 current = current.next;
@@ -71,16 +75,21 @@ public class CSLL {
         //remove from front
         public int removeFront(){
             int temp;
+
+            //incase list is empty
             if(head == null){
                 return -1;
             }
 
+            //if there is only one node
             if(head == tail){
                 temp = head.data;
                 head = tail = null;
                 return temp;
             }
 
+
+            //point head to its next node and point tail.next to head
             temp = head.data;
             head = head.next;
             tail.next = head;
@@ -90,21 +99,27 @@ public class CSLL {
 
         public int removeBack(){
             int temp;
+
+            //incase list is empty
             if(head == null){
                 return -1;
             }
 
+            //if there is only one node
             if(head == tail){
                 temp = tail.data;
                 head = tail = null;
                 return temp;
             }
 
+            
             Node current = head;
+            //loop upto tail previous node
             while(current.next != tail){
                 current = current.next;
             }
 
+            //then remove tail node and point tail to its previous node
             temp  = tail.data;
             current.next = head;
             tail = current;
