@@ -16,7 +16,7 @@ public class CSLL {
 
 
         //print list
-        public void printList(){
+        public void printLL(){
 
             //incase list is empty
             if(head==null){
