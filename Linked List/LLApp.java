@@ -37,12 +37,12 @@ class LLApp{
                     flag = false;
                     break;
                     
-                default:
+                default: System.out.println("Wrong Choice");
                     break;
             }
         }
 
-
+ 
 
 
     }
@@ -55,11 +55,11 @@ class LLApp{
         SLL singly = new SLL();
         while(flag){
             System.out.println("\nSingly Linked List Operations: ");
-            System.out.println("1.Add Front \t 2.Add Back \t 3.Remove Front \t 4.Remove Back \t 5.Print List \t 6.Go Back");
+            System.out.println("1.Add Front \t 2.Add Back \t 3.Remove Front \t 4.Remove Back \t 5.Print List \t 6.Add At Index \t 7.Go Back");
             System.out.print("Enter your choice: ");
             System.out.println();
             int choice = sc.nextInt();
-            int data,res;
+            int data,res,idx;
             switch(choice){
                 
                 case 1:
@@ -91,6 +91,18 @@ class LLApp{
                     break;
 
                 case 6:
+                    System.out.println("Enter the Index: ");
+                    idx = sc.nextInt();
+                    System.out.println("Enter the data: ");
+                    data = sc.nextInt();
+                    if(!singly.addAtIdx(idx, data)){
+                        System.out.println("Index value is greater than Max Index.");
+                        break;
+                    }
+                    System.out.println("Data inserted At index "+idx+" successfully");
+                    break;
+
+                case 7:
                     System.out.println("Going Back..");
                     flag=false;
                     break;

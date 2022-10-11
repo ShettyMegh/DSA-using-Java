@@ -16,7 +16,7 @@ public class SLL {
     }
 
     private Node head;
-
+    private int count = 0;
 
     //print SLL
     public void printLL(){
@@ -40,6 +40,8 @@ public class SLL {
         }
 
         System.out.print("Null");
+
+        System.out.println("\n\n\n Length="+count);
     }
 
 
@@ -50,12 +52,30 @@ public class SLL {
 
         if(head==null){
             head = newNode;
+            count++;
             return;
         }
 
-        
         newNode.next = head;
         head = newNode;
+        count++;
+    }
+
+    // add at index
+    public boolean addAtIdx(int idx,int data){
+        if(idx>count){return false;}
+        Node newNode = new Node(data);
+        Node prev;
+        prev = head;
+        for(int i=0;i<idx-1;i++){
+            prev = prev.next;
+        }
+
+        newNode.next = prev.next;
+        prev.next = newNode;
+        count++;
+        return true;
+
     }
 
 
